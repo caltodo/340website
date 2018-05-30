@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<body>
+
+<div>
+	<table>
+		<tr>
+			<td> Conferences </td>
+		</tr>
+		<tr>
+			<td> Conference ID</td>
+			<td> Team Name </td>
+		</tr>
+		<tr>
+			<td> West </td>
+			<td>Blazers</td>
+			<td>49</td>
+			<td>33</td>
+		</tr>
+	</table>
+<!--  need to change the action later -->
+
+<form method = "POST" action="/Conference">
+	<fieldset>
+		<legend>Name</legend>
+		<p>Conference ID: <input type = "text" name = "ConferenceID"/> </p>
+		<p>Team Name: <input type = "text" name = "TeamName"/> </p>
+	
+		<p><input type = "submit" ></p>
+
+	</fieldset>
+</form>
+</div>
+
+<h3>Current Standings:</h3>
+<table>
+	<thead> 
+		<th>Team Name</th> 
+		<th>Conference ID</th>  
+		<th>Wins </th> 
+		<th>Losses </th>
+	</thead> 
+	<tbody> 
+		{{#each Players}} 
+		<tr> 
+			<td>{{TeamName}}</td> 
+			<td>{{ConferenceID}}</td> 
+			<td>{{Wins}}</td> 
+			<td>{{Losses}}</td>
+			<td><button onclick="deleteTeam({{id}})">Delete</button></td>
+			<td><a href="/Players/{{id}}">Update</a></td>
+		</tr> 
+		{{/each}} 
+	</tbody> 
+</table> 
+
+
+
+</body>
+</html>
