@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<body>
+<div>
+	<table>
+		<tr>
+			<td> Posititions</td>
+		</tr>
+		<tr>
+			<td>Player ID </td>
+			<td> Primary Position </td>
+			<td> Secondary Position</td>
+		</tr>
+		<tr>
+			<td>34</td>
+			<td>PG</td>
+			<td>SG</td>
+		</tr>
+	</table>
+<!--  need to change the action later -->
+
+<form method = "POST" action="/Positions">
+	<fieldset>
+		<legend>Name</legend>
+		<p>Player ID: <input type = "text" name = "PlayerID"/> </p>
+		<p><input type = "submit" ></p>
+	</fieldset>
+
+	<fieldset>
+		<legend>Positions</legend>
+		<p>Primary Position: <input type = "text" name = "PrimaryPosition"/> </p>
+		<p>Secondary Position: <input type = "text" name = "SecondaryPosition"/> </p>
+		<p><input type = "submit" ></p>
+
+	</fieldset>
+</form>
+</div>
+
+<h3>Current Positions:</h3>
+<table>
+	<thead> 
+		<th>First Name</th> 
+		<th>Last Name</th> 
+		<th>PrimaryPosition</th>  
+		<th>SecondaryPosition</th>  
+		<th>Age</th>
+		<th>Height</th>  
+		<th>Weight</th>  
+	</thead> 
+	<tbody> 
+		{{#each Positions}} 
+		<tr> 
+			<td>{{FirstName}}</td> 
+			<td>{{LastName}}</td> 
+			<td>{{PrimaryPosition}}</td>
+			<td>{{SecondaryPosition}}</td>
+			<td>{{Age}}</td> 
+			<td>{{Height}}</td>
+			<td>{{Weight}}</td>
+
+			<td><button onclick="deletePlayer({{id}})">Delete</button></td>
+			<td><a href="/Players/{{id}}">Update</a></td>
+		</tr> 
+		{{/each}} 
+	</tbody> 
+</table> 
+
+
+
+</body>
+</html>

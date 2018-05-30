@@ -1,0 +1,83 @@
+
+<!doctype html>
+<html>
+
+<div>
+	<table>
+		<tr>
+			<td>Players' Averages</td>
+		</tr>
+		<tr>
+			<td> First Name </td>
+			<td> Last Name </td>
+			<td> Points </td>
+			<td> Assists </td>
+			<td> Rebounds </td>
+			<td> Steals </td>
+			<td> Blocks </td>
+		</tr>
+		<tr>
+			<td>CJ</td>
+			<td>McCollum</td>
+			<td>23.4</td>
+			<td>4.5</td>
+			<td>3.7</td>
+			<td>1.2</td>
+			<td>0.6</td>
+		</tr>
+	</table>
+<!--  need to change the action later -->
+
+<form method = "POST" action="Averages.html">
+	<fieldset>
+		<legend>Name</legend>
+		<p>First Name: <input type = "text" name = "FirstName"/> </p>
+		<p>Last Name: <input type = "text" name = "LastName"/> </p>
+		<p><input type = "submit" ></p>
+	</fieldset>
+
+	<fieldset>
+		<legend>Stats</legend>
+		<p>Points: <input type = "text" name = "Points"/> </p>
+		<p>Assists: <input type = "text" name = "Assists"/> </p>
+		<p>Rebounds: <input type = "text" name = "Rebounds"/> </p>
+		<p>Steals: <input type = "text" name = "Steals"/> </p>
+		<p>Blocks: <input type = "text" name = "Blocks"/> </p>
+		<p><input type = "submit" ></p>
+
+	</fieldset>
+</form>
+
+<h3>Current Stats:</h3>
+<table>
+	<thead> 
+		<th>Player ID</th> 
+		<th>First Name</th> 
+		<th>Last Name</th> 
+		<th>Points</th>
+		<th>Assists</th>  
+		<th>Rebounds</th>  
+		<th>Blocks</th>  
+		<th>Steals</th>  
+	</thead> 
+	<tbody> 
+		{{#each people}} 
+		<tr> 
+			<td>{{PlayerID}}</td> 
+			<td>{{FirstName}}</td> 
+			<td>{{LastName}}</td> 
+			<td>{{Points}}</td>
+			<td>{{Assists}}</td> 
+			<td>{{Rebounds}}</td> 
+			<td>{{Blocks}}</td> 
+			<td>{{Steals}}</td> 
+			<td><button onclick="deletePlayer_Av({{id}})">Delete</button></td>
+			<td><a href="/Averages/{{id}}">Update</a></td>
+		</tr> 
+	{{/each}} 
+	</tbody> 
+</table> 
+
+
+</div>
+</html>
