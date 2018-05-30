@@ -1,0 +1,2 @@
+Github doesn't like empty folders
+It also doens't like trying to just add a whole folder to a repo
